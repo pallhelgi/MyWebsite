@@ -1,8 +1,18 @@
 <template>
   <div id="app">
+    <div class="nav-bar-container">
+      <b-button class="log-in">
+        Log In
+      </b-button>
+    </div>
+    <div class="name-div">
+      <h1>Páll Helgi</h1>
+    </div>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">About me</router-link> |
+      <router-link to="/">Education</router-link> |
+      <router-link to="/">Experience</router-link> |
+      <router-link to="/about">Interests</router-link>
     </div>
     <router-view/>
   </div>
@@ -26,4 +36,19 @@
     }
   }
 }
+.name-div {
+  padding-top: 100px;
+}
+
+.nav-bar-container {
+  background-color: #42b983;
+  padding: 50px;
+}
+
+.log-in {
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+
 </style>
