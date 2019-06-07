@@ -10,9 +10,9 @@
     </div>
     <div id="nav">
       <router-link to="/">About me</router-link> |
-      <router-link to="/">Education</router-link> |
-      <router-link to="/">Experience</router-link> |
-      <router-link to="/about">Interests</router-link>
+      <router-link to="/education">Education</router-link> |
+      <router-link to="/experience">Experience</router-link> |
+      <router-link to="/interests">Interests</router-link>
     </div>
     <router-view/>
   </div>
@@ -32,16 +32,20 @@
     font-weight: bold;
     color: #2c3e50;
     &.router-link-exact-active {
-      color: #42b983;
+      color: #003e70;
     }
   }
 }
 .name-div {
   padding-top: 100px;
+  h1 {
+    font-family: 'Georgia', 'Helvetica';
+    font-size: 100px;
+  }
 }
 
 .nav-bar-container {
-  background-color: #42b983;
+  background-color: #003e70;
   padding: 50px;
 }
 
