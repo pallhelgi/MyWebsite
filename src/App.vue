@@ -2,7 +2,7 @@
   <div id="app">
     <header>
       <div class="logo-container">
-        <a href="#home"><img src="../src/assets/logo.png" alt="Logo" width="100px" height="50px"></a>
+        <a href="#"><img src="../src/assets/logo.png" alt="Logo" width="100px" height="50px"></a>
       </div>
       <nav>
         <ul class="nav-links">
