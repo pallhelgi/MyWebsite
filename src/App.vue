@@ -1,68 +1,124 @@
 <template>
   <div id="app">
-    <div class="banner-container">
-      <b-navbar toggleable="lg" type="dark" variant="dark">
-        <b-navbar-brand href="#" class="logo">P.H</b-navbar-brand>
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-        <b-collapse id="nav-collapse" is-nav>
-          <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
-            <b-nav-item-dropdown right>
-              <!-- Using 'button-content' slot -->
-              <template slot="button-content"><em>User</em></template>
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
-              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-            </b-nav-item-dropdown>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-    </div>
-    <div>
-      <Home />
-    </div>
-    <div>
-      <About />
-    </div>
-    <div>
-      <Portfolio />
-    </div>
-    <div class="footer">
-      Footer
-    </div>
+    <header>
+      <div class="logo-container">
+        <img src="../src/assets/logo.png" alt="Logo" width="100px" height="50px">
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a class="nav-link" href="#" title="About me">About me</a></li>
+          <li><a class="nav-link" href="#" title="Projects">Projects</a></li>
+          <li><a class="nav-link nav-link-login" href="#" title="Log In">Log In</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <Home />
+      </div>
+      <div>
+        <About />
+      </div>
+      <div>
+        <Projects />
+      </div>
+    </main>
+    <footer>
+      <div class="logo-footer-container">
+        <img src="../src/assets/logo.png" alt="Logo" width="100px" height="50px">
+      </div>
+    </footer>
   </div>
 </template>
 
 <script>
 import Home from './views/Home'
 import About from './views/About'
-import Portfolio from './views/Portfolio'
+import Projects from './views/Projects'
 
 export default {
   name: 'app',
   components: {
     Home,
     About,
-    Portfolio
+    Projects
   }
 }
 </script>
 
-<style scoped lang="scss">
-  .banner-container {
-    position: sticky;
-    top: 0;
+<style scoped lang="scss"> 
+  header {
+    position: fixed;
+    min-width: 320px;
+    width: 100%;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    border-color: black;
+    display: flex;
+    align-items: center;
   }
 
-  .logo {
+  .logo-container {
+    padding-left: 20px;
+  }
+
+  nav {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    float: right;
+    align-items: center;
+    margin: 0;
+  }
+
+  .nav-link {
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    text-decoration: none;
+    color: black; 
+  }
+
+  .nav-link:hover {
     font-weight: bold;
-    font-size: 60px;
-    padding-left: 15px;
   }
 
-  .footer {
-    text-align: center;
-    padding: 50px 50px 50px 50px;
-    background-color: rgb(43, 43, 43);
-    color: lightgray;
+  .nav-link::after {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  .nav-link-login {
+    font-size: 25px;
+  }
+
+  li {
+    float: right;
+    margin: 10px;
+  }
+
+  footer {
+    width: 100%;
+    height: 200px;
+    background: black;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-footer-container {
+    margin: auto;
   }
 </style>

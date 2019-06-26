@@ -1,61 +1,60 @@
 <template>
-  <div id="about" class="about-container">
-    <h1>About me</h1>
-    <div class="about-me">
-      <div class="image">
-        <img src="../assets/pall_helgi_sigurdarson_litur_1.jpg">
+  <div class="about-wrapper">
+    <div class="about">
+      <div class="about-image-text">
+        <h1>About me</h1>
+        <div class="image-text-grid">
+          <div class="image">
+            <img src="../assets/pall_helgi_sigurdarson_litur_1.jpg" alt="picture" width="200" height="266">
+          </div>
+          <div class="text">
+            <p>My name is Páll. I graduated with degrees in Computer Science from Reykjavík University and Business Management from University of Iceland in 2019. I’m currently looking for new opportunities as a Software Developer with backend focus.</p>
+          </div>
+        </div>
       </div>
-      <div class="about-me-text">
-        <p>Programmer, Agile enthusiast, positive, people person, organized, ultimate Frisbee player, board game player, book reader.</p>
-        <p>I am a Computer Scientist and Business Administrator with focus on management and leadership who is currently hyped on software development using Agile methodologies. All you need to make a great product is a great team!</p>
-        <p>Experienced software developer (C, C++, C#, Java, Python, JavaScript, Angular, NodeJS .Net, .Net Core, GraphQL, SQL and more!).</p>
-      </div>
-    </div>
-    <div>
-      <Education/>
-    </div>
-    <div>
-      <Experience/>
-    </div>
-    <div>
-      <Interests/>
     </div>
   </div>
 </template>
 
 <script>
-import Education from './Education'
-import Experience from './Experience'
-import Interests from './Interests'
-
 export default {
-  name: 'about',
-  components: {
-    Education,
-    Experience,
-    Interests
-  }
 }
 </script>
 
 <style scoped lang="scss">
-.about-container {
-  padding: 15px 200px 15px 200px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(43, 43, 43);
-  color: lightgrey;
-}
+  .about-wrapper {
+    background: #F0F0F0;
+  }
 
-.image {
-  float: left;
-  padding-right: 15px;
-  padding-top: 8px;
-}
+  .about {
+    width: 60%;
+    margin: auto;
+  }
 
-.about-me {
-  padding-bottom: 2px;
-  margin: 5px;
-}
+  .about-image-text {
+    font-family: sans-serif;
+    padding-top: 250px;
+    padding-bottom: 250px;
+  }
+
+  .image-text-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 6%;
+  }
+  
+  h1 {
+    margin: 0 0 15px 0;
+  }
+
+  img {
+    margin-top: 13px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+  }
 </style>
