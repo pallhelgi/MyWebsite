@@ -2,25 +2,25 @@
   <div id="app">
     <header>
       <div class="logo-container">
-        <img src="../src/assets/logo.png" alt="Logo" width="100px" height="50px">
+        <a href="#home"><img src="../src/assets/logo.png" alt="Logo" width="100px" height="50px"></a>
       </div>
       <nav>
         <ul class="nav-links">
-          <li><a class="nav-link" href="#" title="About me">About me</a></li>
-          <li><a class="nav-link" href="#" title="Projects">Projects</a></li>
+          <li><a class="nav-link" href="#about" title="About me">About me</a></li>
+          <li><a class="nav-link" href="#projects" title="Projects">Projects</a></li>
           <li><a class="nav-link nav-link-login" href="#" title="Log In">Log In</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <div>
-        <Home />
+        <Home id="home"/>
       </div>
       <div>
-        <About />
+        <About id="about"/>
       </div>
       <div>
-        <Projects />
+        <Projects id="projects"/>
       </div>
     </main>
     <footer>
