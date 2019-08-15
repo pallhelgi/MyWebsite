@@ -8,7 +8,7 @@
         <ul class="nav-links">
           <li><a class="nav-link" href="#about" title="About me">About me</a></li>
           <li><a class="nav-link" href="#projects" title="Projects">Projects</a></li>
-          <li><a class="nav-link nav-link-login" href="#" title="Log In">Log In</a></li>
+          <li><a class="nav-link-login"  v-b-popover.hover.bottom="'Dsiabled!'">Log In</a></li>
         </ul>
       </nav>
     </header>
@@ -21,6 +21,9 @@
       </div>
       <div>
         <Projects id="projects"/>
+      </div>
+      <div>
+        <Map />
       </div>
     </main>
     <footer>
@@ -35,13 +38,25 @@
 import Home from './views/Home'
 import About from './views/About'
 import Projects from './views/Projects'
+import Map from './views/Map'
 
 export default {
   name: 'app',
   components: {
     Home,
     About,
-    Projects
+    Projects,
+    Map
+  },
+  data() {
+    return {
+    showDisabled: true
+    }
+  },
+  methods: {
+    logInDisabled() {
+      this.showDisabled = !this.showDisabled;
+    }
   }
 }
 </script>
@@ -103,6 +118,11 @@ export default {
 
   .nav-link-login {
     font-size: 25px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    color: black; 
   }
 
   li {
