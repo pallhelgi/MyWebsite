@@ -13,17 +13,21 @@
       </nav>
     </header>
     <main>
-      <div>
-        <Home id="home"/>
+      <div v-if="supergroupOn">
+        <div>
+          <Map v-on:toggleGroupToParent="toggleSupergroup" />
+        </div>
       </div>
-      <div>
-        <About id="about"/>
-      </div>
-      <div>
-        <Projects id="projects"/>
-      </div>
-      <div>
-        <Map />
+      <div v-else>
+        <div>
+          <Home id="home"/>
+        </div>
+        <div>
+          <About id="about"/>
+        </div>
+        <div>
+          <Projects id="projects" v-on:toggleGroupToParent="toggleSupergroup" />
+        </div>
       </div>
     </main>
     <footer>
@@ -50,14 +54,15 @@ export default {
   },
   data() {
     return {
-    showDisabled: true
+      supergroupOn: false
     }
   },
   methods: {
-    logInDisabled() {
-      this.showDisabled = !this.showDisabled;
+    toggleSupergroup(event) {
+      this.supergroupOn = !this.supergroupOn
     }
   }
+  
 }
 </script>
 
@@ -123,6 +128,7 @@ export default {
     font-weight: normal;
     text-decoration: none;
     color: black; 
+    cursor: pointer;
   }
 
   li {

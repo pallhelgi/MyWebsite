@@ -31,6 +31,16 @@
           <div class="project">
             <h1>My Website</h1>
             <p>This Website</p>
+            <p>Work in process</p>
+          </div>
+        </div>
+      </a>
+      <a v-on:click="$emit('toggleGroupToParent')">
+        <div class="project-wrapper" >
+          <div class="project">
+            <h1>Supergroup</h1>
+            <p>Site for my D&amp;D group</p>
+            <p>Work in process</p>
           </div>
         </div>
       </a>
@@ -39,13 +49,20 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+      toggleGroupToParent(event) {
+        this.$emit('toggleSupergroup')
+      }
+  }
+}
 </script>
 
 <style scoped lang="scss">
   a {
     text-decoration: none;
     color: black;
+    cursor: pointer;
   }
   .projects-wrapper {
     width: 60%;
@@ -55,11 +72,11 @@ export default {}
   .projects {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 33.3333% 33.3333% 33.3333%;
     grid-column-gap: 6%;
     grid-row-gap: 10%;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     padding-bottom: 100px;
   }
 

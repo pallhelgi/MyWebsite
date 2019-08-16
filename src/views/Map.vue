@@ -1,7 +1,12 @@
 <template>
     <div class="map">
-        <div class="button">
-            <b-button size="lg" @click="toggleAlliance()">Þjóðarbandalagið</b-button>
+        <div class="button-wrapper">
+            <div class="button">
+                <b-button v-on:click="$emit('toggleGroupToParent')">Back to main page</b-button>
+            </div>
+            <div class="button">
+                <b-button size="lg" @click="toggleAlliance()">Þjóðarbandalagið</b-button>
+            </div>
         </div>
         <div class="map-container">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 200 612 400" style="enable-background:new 0 200 612 400; vertical-align:top;" xml:space="preserve">
@@ -543,7 +548,11 @@ export default {
     methods: {
         toggleAlliance: function(event) {
             this.allianceOn = !this.allianceOn
+        },
+        toggleGroupToParent(event) {
+            this.$emit('toggleSupergroup')
         }
+
     }
 }
 </script>
@@ -658,7 +667,7 @@ export default {
     }
 
     .map {
-        padding: 0 20% 0 20%;
+        padding: 5% 20% 0 20%;
         border-top: 2px solid black;
     }
 
